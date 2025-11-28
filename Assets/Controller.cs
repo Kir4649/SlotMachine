@@ -21,9 +21,9 @@ public class Controller : MonoBehaviour
         initialpos2 = this.Reel2.transform.position;
         initialpos3 = this.Reel3.transform.position;
 
-        speed1 = -0.1f;
-        speed2 = -0.1f;//回転速度
-        speed3 = -0.1f;
+        speed1 = -0.35f;
+        speed2 = -0.35f;//回転速度
+        speed3 = -0.35f;
     }
    
     void Update()
@@ -32,15 +32,15 @@ public class Controller : MonoBehaviour
         this.Reel2.transform.Translate(0, speed2, 0);
         this.Reel3.transform.Translate(0, speed3, 0);
 
-        if(Reel.transform.position.y < -7f)//リールが下に行ったら
+        if(Reel.transform.position.y < -14f)//リールが下に行ったら
         {
             this.Reel.transform.position = initialpos;//初期化する
         }
-        if (Reel2.transform.position.y < -7f)
+        if (Reel2.transform.position.y < -14f)
         {
             this.Reel2.transform.position = initialpos2;
         }
-        if (Reel3.transform.position.y < -7f)
+        if (Reel3.transform.position.y < -14f)
         {
             this.Reel3.transform.position = initialpos3;
         }
@@ -56,5 +56,11 @@ public class Controller : MonoBehaviour
     public void stopReel3()
     {
         speed3 = 0;
+    }
+    public void Resst()
+    {
+        speed1 = -0.35f;
+        speed2 = -0.35f;//回転速度
+        speed3 = -0.35f;
     }
 }
